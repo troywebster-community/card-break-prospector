@@ -4,4 +4,4 @@ __pycache__/
 
 # Prospect research data stays local (repo is public; see README)
 */data/input/
-*/data/output/*.csv
+*/data/output/
