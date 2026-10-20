@@ -105,6 +105,8 @@ def build(records, today):
         if d and d>today: problems.append('Activity date in future (scheduled vs actual activity?)')
         if d and not valid_url(r.get('activity_source_url','')): problems.append('Activity date has no source')
         if r.get('email_verification') not in (None,'Not checked','Deliverability verified','Failed'): problems.append('Invalid deliverability status')
+        # Researcher/auditor flags for conflicting or weak evidence the checks above cannot see.
+        problems += [str(x) for x in (r.get('review_flags') or []) if str(x).strip()]
         sc,rationale=score(r,today)
         audiences=[]
         for a in r.get('audiences') or []:

@@ -21,7 +21,7 @@ Additional columns for audit and workflow:
 - `Identity Source URL`: Link substantiating seller-brand identification.
 - `Score Rationale`: Explanation of calculated factors.
 - `Research Date`: YYYY-MM-DD of review.
-- `Review Status`: Ready / Needs review.
+- `Review Status`: Ready / Needs review. Set to Needs review by failed checks or by any text in the optional JSONL `review_flags` list (researcher or auditor caveats).
 - `Notes`: Brief factual gaps or caveats.
 
 `evidence.csv` records prospect brand, claim type, value, source URL, observed date and notes. `review_queue.csv` contains rows with missing or conflicting critical evidence.

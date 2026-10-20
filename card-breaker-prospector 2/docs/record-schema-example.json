@@ -20,5 +20,6 @@
   "identity_source_url": "",
   "research_date": "2026-10-20",
   "notes": "",
+  "review_flags": [],
   "evidence": [{"claim_type": "identity", "value": "EXAMPLE", "url": "https://example.org/evidence", "observed_date": "2026-10-20", "notes": "Example only"}]
 }

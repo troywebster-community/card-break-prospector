@@ -14,5 +14,7 @@ class PipelineTests(unittest.TestCase):
         r2={**self.r,'brand':'Different display name'};rows,notes=dedup([self.r,r2]);self.assertEqual(len(rows),1);self.assertEqual(len(notes),1)
     def test_sms_yes_needs_source(self):
         r={**self.r,'sms_program':'Yes'};_,_,review=build([r],dt.date(2026,10,20));self.assertEqual(len(review),1)
+    def test_review_flags(self):
+        r={**self.r,'review_flags':['Identity tied by name only']};prospects,_,review=build([r],dt.date(2026,10,20));self.assertEqual(len(review),1);self.assertIn('Identity tied by name only',prospects[0]['Notes'])
 
 if __name__=='__main__': unittest.main()
